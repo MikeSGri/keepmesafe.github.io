@@ -4,9 +4,10 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4 url('assets/images/background.png') center/cover no-repeat fixed;
+    background: #f4f4f4 url('assets/bg.png') center/cover no-repeat fixed;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -14,19 +15,17 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
     color: #fff;
     padding: 20px;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
+    width: 100%;
 }
 
 nav {
-    background-color: #007BFF;
+    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent background */
     padding: 10px;
+    width: 100%;
 }
 
 nav a {
@@ -36,11 +35,13 @@ nav a {
 }
 
 section {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
     padding: 20px;
     margin: 20px 0;
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
 }
 
 .card {
@@ -98,11 +99,11 @@ section {
 }
 
 footer {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
     color: #fff;
     text-align: center;
     padding: 10px;
+    width: 100%;
     position: fixed;
     bottom: 0;
-    width: 100%;
 }
