@@ -1,0 +1,38 @@
+/* styles.css */
+body {
+    background: url('assets/bg.png') center/cover no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.card-description {
+    background-color: #4CAF50; /* Green Background */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    line-height: 1.5;
+}
