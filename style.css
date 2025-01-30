@@ -1,86 +1,102 @@
 /* Global Styles */
 body {
-    background: url('assets/bg.png') center/cover no-repeat;
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: url('assets/bg.png') center/cover no-repeat;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #007BFF;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
     padding: 20px;
 }
 
-/* Service Section */
-#services {
-    width: 100%;
-    max-width: 1200px;
-    text-align: center;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/* Service Card */
-.card {
-    width: 300px;
-    background-color: #2b2b2b;
-    border-radius: 10px;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Card Title */
 .card-title {
-    color: #fff;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
-/* Image inside card */
-.card-image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-
-/* Description Box */
-.card-description {
-    padding: 15px;
-    border-radius: 5px;
+.card-text {
     font-size: 1em;
     line-height: 1.5;
 }
 
-/* Different colors for each card */
-.api-review .card-description {
+.api-review .card-text {
     background-color: #4CAF50; /* Green */
     color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.automation .card-description {
+.automation .card-text {
     background-color: #007BFF; /* Blue */
     color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.browser-security .card-description {
+.browser-security .card-text {
     background-color: #DC3545; /* Red */
     color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-/* Free Site Review Button */
-.free-review-btn {
+.btn-success {
     background-color: #4CAF50;
-    color: white;
+    border: none;
     padding: 10px 20px;
-    border-radius: 5px;
     font-size: 1em;
     font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-    position: relative;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
