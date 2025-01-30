@@ -1,4 +1,9 @@
 /* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: Arial, sans-serif;
     background: url('assets/images/background.png') center/cover no-repeat;
