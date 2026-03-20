@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Cybersecurity Services">
     <meta name="author" content="Michael">
+    <!-- Fly.io API base URL, no trailing slash. Example: https://keepmesafe-api.fly.dev -->
+    <meta name="contact-api-base" content="">
     <title>KeepMeSafe</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
@@ -114,12 +116,28 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const API_BASE_URL = "http://127.0.0.1:8000";
+        function getContactApiBase() {
+            const meta = document.querySelector('meta[name="contact-api-base"]');
+            const fromMeta = meta && meta.getAttribute("content") && meta.getAttribute("content").trim();
+            if (fromMeta) return fromMeta.replace(/\/$/, "");
+            const h = window.location.hostname;
+            if (h === "localhost" || h === "127.0.0.1") return "http://127.0.0.1:8000";
+            return null;
+        }
+
         const contactForm = document.getElementById("contactForm");
         const contactStatus = document.getElementById("contactStatus");
 
         contactForm.addEventListener("submit", async (event) => {
             event.preventDefault();
+
+            const API_BASE_URL = getContactApiBase();
+            if (!API_BASE_URL) {
+                contactStatus.textContent =
+                    "Contact form is not configured for this site. In index.html, set <meta name=\"contact-api-base\" content=\"https://YOUR-DEPLOYED-API\"> (e.g. Railway/Render/Fly.io). GitHub Pages only hosts the website, not the email API.";
+                contactStatus.className = "mt-3 text-danger";
+                return;
+            }
 
             const payload = {
                 name: document.getElementById("name").value.trim(),

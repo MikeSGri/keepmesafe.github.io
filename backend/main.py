@@ -13,14 +13,18 @@ load_dotenv(Path(__file__).resolve().parent / ".env")
 
 app = FastAPI()
 
-# Enable CORS for frontend access
+# Enable CORS for frontend access (GitHub Pages, custom domain, Fly.io preview URL)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5500",
         "http://127.0.0.1:5500",
+        "http://127.0.0.1:8000",
         "https://keepmesafe.github.io",
+        "https://keepmesafe.live",
+        "https://www.keepmesafe.live",
     ],
+    allow_origin_regex=r"https://.*\.fly\.dev",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
